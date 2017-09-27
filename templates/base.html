@@ -73,8 +73,27 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul id="nav-main-sections" class="nav navbar-nav">
                 {% if request.user.is_authenticated %}
-                    <li {% if page == 'checks' %} class="active" {% endif %}>
-                        <a href="{% url 'hc-checks' %}">Checks</a>
+                    <li class="dropdown {% if page == 'checks' %} active {% endif %}">
+                        <a id="nav-checks" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Checks <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li >
+                                <a href="{% url 'hc-checks' %}">All</a>
+                            </li>
+                            <li >
+                                <a href="{% url 'hc-checks' %}?status=up"><span class="status icon-up"></span> Up</a>
+                            </li>
+                            <li >
+                                <a href="{% url 'hc-checks' %}?status=down"><span class="status icon-down"></span> Down</a>
+                            </li>
+                            <li >
+                                <a href="{% url 'hc-checks' %}?status=new"><span class="status icon-up new"></span> New</a>
+                            </li>
+                            <li >
+                                <a href="{% url 'hc-checks' %}?status=paused"><span class="status icon-paused"></span> Paused</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li {% if page == 'channels' %} class="active" {% endif %}>
