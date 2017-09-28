@@ -1,6 +1,6 @@
 # healthchecks
 
-https://travis-ci.org/eltronix/healthchecks.svg?branch=master
+[(https://travis-ci.org/eltronix/healthchecks.svg?branch=master)]
 
 ![Screenshot of Welcome page](/stuff/screenshots/welcome.png?raw=true "Welcome Page")
 
